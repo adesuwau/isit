@@ -1,5 +1,6 @@
 require 'json'
 require 'pry'
+require 'httpparty'
 
 class App < Sinatra:: Base
 
@@ -15,13 +16,10 @@ end
 
 post ("/new") do
   @user_info = []
-  @user_info.push(:user_choice => params[:hot])
-    @user_info.push(:user_choice => params[:cold])
-        @user_info.push(:user_choice => params[:snow])
-            @user_info.push(:user_choice => params[:rain])
-  @user_info.push(:user_zip => params[:user_zip])
+  @user_info.push(:user_choice => params[:user_choice])
+  @user_info.push(:user_zip    => params[:user_zip])
   logger.info @user_info
-binding.pry
+# binding.pry
 end
 
 get ("/result") do
