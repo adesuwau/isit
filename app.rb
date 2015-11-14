@@ -20,6 +20,7 @@ post ("/new") do
   @user_info.push(:user_zip    => params[:user_zip])
   logger.info @user_info
 # binding.pry
+redirect to ("/result")
 end
 
 get ("/result") do
